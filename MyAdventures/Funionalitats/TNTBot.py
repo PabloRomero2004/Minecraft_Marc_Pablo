@@ -16,3 +16,6 @@ while True:
             x, y, z = mc.player.getTilePos()
             mc.setBlock(x+1, y, z, block.TNT)
             mc.setBlock(x+1, y+1, z, block.FIRE) 
+
+
+#ejdihfuhfufvhu
