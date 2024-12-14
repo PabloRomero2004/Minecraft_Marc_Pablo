@@ -23,7 +23,6 @@ class InsultBot():
             for mensaje in chatEvent:
                 if mensaje.message == "insultam":
                     mc.postToChat(insults[count])
-
                     count += 1
                     count = count % len(insults)
                 elif mensaje.message == "end performance":

@@ -16,6 +16,7 @@ mc = Minecraft.Minecraft.create()
 insult_bot  = InsultBot()
 tnt_bot = TNTBot()
 bot_manager = BotManager(insult_bot)
+performance_active = False
 
 while True:
     chatEvent = mc.events.pollChatPosts()
@@ -27,9 +28,12 @@ while True:
             bot_manager.set_bot_type(tnt_bot)
             mc.postToChat("bot changed to tnt bot")
         elif mensaje.message == "perform":
+            mc.postToChat("performance started")
             bot_manager.perform()
+            mc.events.clear()
         elif mensaje.message == "hola":
             mc.postToChat("hola que tal")
+    
         
                 
 

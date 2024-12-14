@@ -16,8 +16,5 @@ class BotManager:
     def perform(self):
         self.bot_state.perform()
 
-    def notify(self):
-        self.bot_state.notify()
-
         
 
