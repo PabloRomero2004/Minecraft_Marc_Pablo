@@ -8,15 +8,21 @@ import mcpi.block as block
 
 mc = Minecraft.Minecraft.create()
 
-class TNTBot(Bot):
+active_loop = False
+
+class TNTBot():
     def perform(self):
-        while True:
+        active_loop = True
+        while active_loop == True:
             chatEvent = mc.events.pollChatPosts()
             for mensaje in chatEvent:
                 if mensaje.message == "tnt":
                     x, y, z = mc.player.getTilePos()
                     mc.setBlock(x+1, y, z, block.TNT)
-                    mc.setBlock(x+1, y+1, z, block.FIRE) 
+                    mc.setBlock(x+1, y+1, z, block.FIRE)
+
+    def notify(self):
+        active_loop = False
 
 
 

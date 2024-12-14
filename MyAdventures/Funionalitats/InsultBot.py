@@ -12,10 +12,13 @@ mc = Minecraft.Minecraft.create()
 insults=["saboc", "no vals un fuckin duro", "Algun dia jugaras en los ulls oberts", "tens menos habilitat que nepe, i es dir molt...",
          "vaia ascla", "Osti xec, no val ni un duro lo paio...", "Onso", "Sol de veuret jugar he agafat clamidia"]
 
-class InsultBot(Bot):
+active_loop = False
+
+class InsultBot():
     def perform(self):
         count=0
-        while True:
+        active_loop = True
+        while active_loop == True:
             chatEvent = mc.events.pollChatPosts()
             for mensaje in chatEvent:
                 if mensaje.message == "insultam":
@@ -23,6 +26,10 @@ class InsultBot(Bot):
 
                     count += 1
                     count = count % len(insults)
+
+    def notify(self):
+        active_loop = False
+
 
 
          
