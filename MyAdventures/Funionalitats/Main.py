@@ -19,20 +19,25 @@ bot_manager = BotManager(insult_bot)
 performance_active = False
 
 while True:
-    chatEvent = mc.events.pollChatPosts()
-    for mensaje in chatEvent:
-        if mensaje.message == "change to insult bot":
-            bot_manager.set_bot_type(insult_bot)
-            mc.postToChat("bot changed to insult bot")
-        elif mensaje.message == "change to tnt bot":
-            bot_manager.set_bot_type(tnt_bot)
-            mc.postToChat("bot changed to tnt bot")
-        elif mensaje.message == "perform":
-            mc.postToChat("performance started")
-            bot_manager.perform()
-            mc.events.clear()
-        elif mensaje.message == "hola":
-            mc.postToChat("hola que tal")
+        chatEvent = mc.events.pollChatPosts()
+        for mensaje in chatEvent:
+            if mensaje.message == "change to insult bot":
+                bot_manager.set_bot_type(insult_bot)
+                mc.postToChat("bot changed to insult bot")
+            elif mensaje.message == "change to tnt bot":
+                bot_manager.set_bot_type(tnt_bot)
+                mc.postToChat("bot changed to tnt bot")
+            elif mensaje.message == "perform":
+                mc.postToChat("performance started")
+                bot_manager.perform()
+                mc.events.pollChatPosts()              
+            elif mensaje.message == "hola":
+                mc.postToChat("hola que tal")
+
+
+
+    
+    
     
         
                 
