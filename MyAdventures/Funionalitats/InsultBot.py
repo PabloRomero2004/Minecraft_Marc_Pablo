@@ -26,9 +26,8 @@ class InsultBot():
 
                     count += 1
                     count = count % len(insults)
-
-    def notify(self):
-        active_loop = False
+                elif mensaje.message == "end performance":
+                    active_loop == False
 
 
 

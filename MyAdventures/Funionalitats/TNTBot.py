@@ -20,9 +20,9 @@ class TNTBot():
                     x, y, z = mc.player.getTilePos()
                     mc.setBlock(x+1, y, z, block.TNT)
                     mc.setBlock(x+1, y+1, z, block.FIRE)
+                elif mensaje.message == "end performance":
+                    active_loop == False
 
-    def notify(self):
-        active_loop = False
 
 
 
