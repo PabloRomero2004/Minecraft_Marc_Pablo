@@ -28,6 +28,7 @@ class InsultBot():
                     count = count % len(insults)
                 elif mensaje.message == "end performance":
                     active_loop == False
+                    mc.postToChat("performance ended")
 
 
 

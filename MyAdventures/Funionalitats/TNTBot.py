@@ -22,6 +22,7 @@ class TNTBot():
                     mc.setBlock(x+1, y+1, z, block.FIRE)
                 elif mensaje.message == "end performance":
                     active_loop == False
+                    mc.postToChat("performance ended")
 
 
 
